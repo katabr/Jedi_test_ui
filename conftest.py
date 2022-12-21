@@ -2,6 +2,7 @@ from selenium import webdriver
 import pytest
 #import allure
 
+from pages.locators import StartLocators
 from pages.general import Helper
 
 @pytest.fixture()
@@ -16,12 +17,18 @@ def browser():
     # browser = webdriver.Chrome()
     browser.implicitly_wait(10)
 
-    # аутентификация
-    # login = browser.find_element_by_css_selector('#username')
-    # login.send_keys("")
+    url = "http://localhost:3851/#/login"
+    browser.get(url)
 
-    # button_enter = browser.find_element_by_xpath('//button[text()="Войти"]')
-    # button_enter.click()
+    # аутентификация
+    login = browser.find_element(*StartLocators.LOGIN)
+    login.send_keys("AnakinSkywalker")
+
+    password = browser.find_element(*StartLocators.PASSWORD)
+    password.send_keys("32432432")
+
+    button_enter = browser.find_element(*StartLocators.BUTTON_ENTER)
+    button_enter.click()
 
     # закрываем браузер
     yield browser
