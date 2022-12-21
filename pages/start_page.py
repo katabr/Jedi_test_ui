@@ -17,9 +17,38 @@ class StartPage(General, Helper):
     #     selector = self.browser.find_element(*StartLocators.BUTTON_TASKS)
     #     selector.click()
 
+    def past_text_opinion(self):
+        text = StartLocators.TEXT_OPINION
+        selector = self.browser.find_element(*StartLocators.FIELD_OPINION)
+        self.past_text(self,selector,text)
+
+    def push_button_chat(self):
+        selector = self.browser.find_element(*StartLocators.BUTTON_CHAT)
+        selector.click()
+
+    def push_button_lessons(self):
+        selector = self.browser.find_element(*StartLocators.BUTTON_LESSONS)
+        selector.click()
+
+    def push_button_opinion(self):
+        selector = self.browser.find_element(*StartLocators.BUTTON_OPINION)
+        selector.click()
+
+    def push_button_reaction(self):
+        selector = self.browser.find_element(*StartLocators.BUTTON_REACTION)
+        selector.click()
+
+    def should_be_header_chat(self):
+        assert self.check_exists_element(*StartLocators.TEXT_HEADER_CHAT), "Чаты не отображаются"
+
+    def should_be_header_reaction(self):
+        assert self.check_exists_element(*StartLocators.TEXT_HEADER_REACTION), "Оценка дисциплины не отображается"
+
     def should_be_header_timetable(self):
         assert self.check_exists_element(*StartLocators.TEXT_HEADER_TIMETABLE), "Расписание не отображается"
 
+    def should_be_header_lessons(self):
+        assert self.check_exists_element(*StartLocators.TEXT_HEADER_LESSONS), "Предметы не отображаются"
 
     # def active_kion(self):
     #     active_kion = "https://personal-test.eland.mts-corp.ru/kion?haveActiveProduct=1"
