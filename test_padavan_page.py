@@ -5,8 +5,7 @@ from pages.general import Helper
 
 import pytest
 
-@pytest.mark.TC_1()
-# @pytest.mark.skip()
+# @pytest.mark.padavan()
 class TestPadavanPage(Helper):
 
     @pytest.mark.TC_1()
@@ -17,6 +16,7 @@ class TestPadavanPage(Helper):
         # pnp.enter_tasks()
         pnp.should_be_header_timetable()
 
+    @pytest.mark.TC_1()
     def test_check_use1_mission(self, browser):
         pnp = PadavanPage(browser)
         pnp.enter_timetable()
