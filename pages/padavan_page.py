@@ -38,17 +38,36 @@ class PadavanPage(General, Helper):
         selector = self.browser.find_element(*PadavanLocators.BUTTON_MISSION)
         selector.click()
 
+    def push_create_chat_with_user(self):
+        selector = self.browser.find_element(*PadavanLocators.BUTTON_CREATE_CHAT_WITH_USER)
+        selector.click()
 
     def push_button_opinion(self):
         selector = self.browser.find_element(*PadavanLocators.BUTTON_OPINION)
+        selector.click()
+
+    def push_button_output_task(self):
+        selector = self.browser.find_element(*PadavanLocators.BUTTON_OUTPUT_TASK)
+        selector.click()
+
+    def push_button_send_request(self):
+        selector = self.browser.find_element(*PadavanLocators.BUTTON_SEND_REQUEST)
         selector.click()
 
     def push_button_reaction(self):
         selector = self.browser.find_element(*PadavanLocators.BUTTON_REACTION)
         selector.click()
 
+    def should_be_able_output_tasks(self):
+        assert self.check_exists_element(*PadavanLocators.TEXT_ABLE_OUTPUT_TASKS), "Доступные выпускные задания не отображаются"
+
+    def should_be_area_opinion(self):
+        assert self.check_exists_element(*PadavanLocators.TEXT_AREA_OPINION), "Отзыв не отображается"
     def should_be_header_chat(self):
         assert self.check_exists_element(*PadavanLocators.TEXT_HEADER_CHAT), "Чаты не отображаются"
+
+    def should_be_item_begin_chat(self):
+        assert self.check_exists_element(*PadavanLocators.TEXT_BEGIN_CHAT), "Новый чат не создан"
 
     def should_be_header_reaction(self):
         assert self.check_exists_element(*PadavanLocators.TEXT_HEADER_REACTION), "Оценка дисциплины не отображается"

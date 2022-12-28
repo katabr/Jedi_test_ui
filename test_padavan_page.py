@@ -9,7 +9,6 @@ import pytest
 class TestPadavanPage(Helper):
 
     @pytest.mark.TC_1()
-    # @pytest.mark.skip()
     def test_check_timetable(self, browser):
         pnp = PadavanPage(browser)
         pnp.enter_timetable()
@@ -24,34 +23,48 @@ class TestPadavanPage(Helper):
         pnp.should_be_header_mission()
 
     @pytest.mark.TC_2()
-    # @pytest.mark.skip()
     def test_check_chat(self, browser):
         pnp = PadavanPage(browser)
         pnp.push_button_chat()
-        # pnp.enter_mail()
         pnp.should_be_header_chat()
 
     @pytest.mark.TC_2()
-    # @pytest.mark.skip()
     def test_create_new_chat(self, browser):
         pnp = PadavanPage(browser)
         pnp.push_button_chat()
         pnp.create_new_chat()
-        # pnp.enter_mail()
-        #pnp.should_be_header_chat()
-
-
+        pnp.push_create_chat_with_user()
+        pnp.push_button_chat()
+        pnp.should_be_item_begin_chat()
 
     @pytest.mark.TC_3()
-    def test_check_use3_lessons(self, browser):
+    def test_check_lessons(self, browser):
         pnp = PadavanPage(browser)
         pnp.push_button_lessons()
         pnp.should_be_header_lessons()
 
     @pytest.mark.TC_4()
-    def test_check_use4_reaction(self, browser):
+    def test_check_reaction(self, browser):
         pnp = PadavanPage(browser)
+        pnp.push_button_lessons()
         pnp.push_button_reaction()
-        pnp.push_button_opinion()
+        #pnp.push_button_opinion()
         # pnp.past_text_opinion()
         pnp.should_be_header_reaction()
+
+    @pytest.mark.TC_4()
+    def test_check_opinion(self, browser):
+        pnp = PadavanPage(browser)
+        pnp.push_button_lessons()
+        pnp.push_button_reaction()
+        pnp.push_button_opinion()
+        #pnp.past_text_opinion()
+        pnp.should_be_area_opinion()
+
+    @pytest.mark.TC_5()
+    def test_check_output_task(self, browser):
+        pnp = PadavanPage(browser)
+        pnp.push_button_lessons()
+        pnp.push_button_output_task()
+        pnp.push_button_send_request()
+        pnp.should_be_able_output_tasks()
