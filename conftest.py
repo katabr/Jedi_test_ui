@@ -2,7 +2,7 @@ from selenium import webdriver
 import pytest
 #import allure
 
-from pages.locators import StartLocators
+from pages.locators import PadavanLocators
 from pages.general import Helper
 
 @pytest.fixture()
@@ -21,13 +21,13 @@ def browser():
     browser.get(url)
 
     # аутентификация
-    login = browser.find_element(*StartLocators.LOGIN)
+    login = browser.find_element(*PadavanLocators.LOGIN)
     login.send_keys("AnakinSkywalker")
 
-    password = browser.find_element(*StartLocators.PASSWORD)
+    password = browser.find_element(*PadavanLocators.PASSWORD)
     password.send_keys("32432432")
 
-    button_enter = browser.find_element(*StartLocators.BUTTON_ENTER)
+    button_enter = browser.find_element(*PadavanLocators.BUTTON_ENTER)
     button_enter.click()
 
     # закрываем браузер

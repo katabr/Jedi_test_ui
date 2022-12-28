@@ -18,10 +18,12 @@ class GeneralLocators():
     # DOCUMENTS = (By.XPATH, '//span[text()="Документы"]')
     # TURN_PAGES = (By.XPATH, '//button[text()="›"]')
 
-class StartLocators():
+class PadavanLocators():
     BUTTON_CHAT = (By.XPATH, '//button[text()="Чаты"]')
+    BUTTON_CREATE_CHAT = (By.CSS_SELECTOR, '.message-item__message')
     BUTTON_ENTER = (By.CSS_SELECTOR, '.el-button.login-page__button')
     BUTTON_LESSONS = (By.XPATH, '//button[text()="Предметы"]')
+    BUTTON_MISSION = (By.XPATH, '//div[text()="Миссии"]')
     BUTTON_OPINION = (By.XPATH, '//*[text()="Открытый отзыв"]')
     BUTTON_REACTION = (By.XPATH, '//button[text()="Оценить дисциплину"]')
     BUTTON_TASKS = (By.XPATH, '//button[text()="Занятия"]')
@@ -31,6 +33,7 @@ class StartLocators():
     PASSWORD = (By.CSS_SELECTOR,'.el-input__inner[type="password"]')
     TEXT_HEADER_CHAT = (By.XPATH, '//h1[text()="Чаты"]')
     TEXT_HEADER_LESSONS = (By.XPATH, '//h1[text()="Предметы"]')
+    TEXT_HEADER_MISSION = (By.XPATH, '//h3[text()="Миссии на неделю"]')
     TEXT_HEADER_REACTION = (By.XPATH, '//h1[text()="Оценка дисциплины"]')
     TEXT_HEADER_TIMETABLE = (By.XPATH, '//h1[text()="Расписание"]')
     TEXT_OPINION = "Тестовый опрос"
