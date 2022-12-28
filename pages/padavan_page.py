@@ -21,6 +21,12 @@ class PadavanPage(General, Helper):
     #     selector = self.browser.find_element(*PadavanLocators.BUTTON_TASKS)
     #     selector.click()
 
+    def past_profile_test_text(self):
+        self.scroll()
+        selector = self.browser.find_element(*PadavanLocators.FIELD_NAME)
+        text = PadavanLocators.TEXT_FIELD_NAME
+        self.past_text(self, selector, text)
+
     def past_text_opinion(self):
         text = PadavanLocators.TEXT_OPINION
         selector = self.browser.find_element(*PadavanLocators.FIELD_OPINION)
@@ -50,12 +56,21 @@ class PadavanPage(General, Helper):
         selector = self.browser.find_element(*PadavanLocators.BUTTON_OUTPUT_TASK)
         selector.click()
 
-    def push_button_send_request(self):
-        selector = self.browser.find_element(*PadavanLocators.BUTTON_SEND_REQUEST)
+    def push_button_open_menu_profile(self):
+        self.scroll()
+        selector = self.browser.find_element(*PadavanLocators.BUTTON_MENU_PROFILE)
+        selector.click()
+
+    def push_button_profile(self):
+        selector = self.browser.find_element(*PadavanLocators.BUTTON_PROFILE)
         selector.click()
 
     def push_button_reaction(self):
         selector = self.browser.find_element(*PadavanLocators.BUTTON_REACTION)
+        selector.click()
+
+    def push_button_send_request(self):
+        selector = self.browser.find_element(*PadavanLocators.BUTTON_SEND_REQUEST)
         selector.click()
 
     def should_be_able_output_tasks(self):

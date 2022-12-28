@@ -68,3 +68,13 @@ class TestPadavanPage(Helper):
         pnp.push_button_output_task()
         pnp.push_button_send_request()
         pnp.should_be_able_output_tasks()
+
+    # @pytest.mark.TC_6()
+    # def test_check_editing_profile(self, browser):
+    #     pnp = PadavanPage(browser)
+    #     pnp.push_button_profile()
+    #     pnp.push_button_open_menu_profile()
+    #     pnp.past_profile_test_text()
+    #     # pnp.push_button_change()
+    #     # pnp.should_be_able_output_tasks()
+
